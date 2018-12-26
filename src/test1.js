@@ -49,3 +49,18 @@ function foo() {
 //console.log('out function ' +  a); // bye
 
 foo();
+
+
+// map 함수 알아보기
+const a = [1,2,3,4,5];
+
+// map 함수 알아보기 1. foreach
+const b = [];
+a.forEach(num =>  b.push(num * 2));
+
+// map 함수 알아보기 2. map
+const c = a.map(num => num * 2);
+
+console.log(a);
+console.log(b);
+console.log(c);
