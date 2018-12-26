@@ -14,6 +14,7 @@ const arr4 = arr.filter(num => num !== 3); // [1, 2, 4, 5]
 console.log(arr4);
 
 // 데이터의 불변성을 지키며 수정하기.
+// tslint:disable:object-literal-sort-keys
 const array = [{
         id: 0,
         text: 'hello',
