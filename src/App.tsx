@@ -19,16 +19,25 @@ class App extends React.Component {
         phone: '010-0000-0001'
       }
     ]
+    ,keyword : ''    
   }
   private id: number = 2
 
   public render() {
-    const { information } = this.state;
+    const { information, keyword } = this.state;
     return (
       <div>
         <PhoneForm
           onCreate={this.handleCreate}
         />
+        <p>
+          <input
+            placeholder="검색 할 이름을 입력하세요.."
+            onChange={this.handleChange}
+            value={keyword}
+          />
+        </p>
+        <hr />
         <PhoneInfoList
           data={information}
           onRemove={this.handleRemove}
@@ -36,6 +45,12 @@ class App extends React.Component {
         />
       </div>
     );
+  }
+
+  public handleChange = (e: any) => {
+    this.setState({
+      keyword: e.target.value,
+    });
   }
 
   public handleCreate = (data: any) => {
