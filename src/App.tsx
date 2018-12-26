@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.css';
 
 import Counter from './Counter';
+import LifeCycle from './LifeCycle';
 import logo from './logo.svg';
 
 class App extends React.Component {
@@ -16,6 +17,7 @@ class App extends React.Component {
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
         <Counter />
+        <LifeCycle />
       </div>
     );
   }

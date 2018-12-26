@@ -1,6 +1,7 @@
-function printLater(number, fn) {
+// tslint:disable:no-console
+function printLater(num, fn) {
   setTimeout(
-      function() { console.log(number); if (!!fn ) fn(); },
+      function() { console.log(num); if (!!fn ) { fn();} },
       1000
   );
 }
@@ -13,12 +14,12 @@ printLater(1, function() {
   })
 })
 
-function printLater2(number) {
+function printLater2(num) {
   return new Promise( // 새 Promise 를 만들어서 리턴함
       resolve => {
           setTimeout( // 1초뒤 실행하도록 설정
               () => {
-                  console.log(number);
+                  console.log(num);
                   resolve(); // promise 가 끝났음을 알림
               },
               1000
