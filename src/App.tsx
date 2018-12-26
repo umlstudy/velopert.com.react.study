@@ -23,12 +23,16 @@ class App extends React.Component {
   private id: number = 2
 
   public render() {
+    const { information } = this.state;
     return (
       <div>
         <PhoneForm
           onCreate={this.handleCreate}
         />
-        <PhoneInfoList data={this.state.information}/>
+        <PhoneInfoList
+          data={information}
+          onRemove={this.handleRemove}
+        />
       </div>
     );
   }
@@ -37,6 +41,13 @@ class App extends React.Component {
     const { information } = this.state;
     this.setState({
       information: information.concat({ id: this.id++, ...data })
+    })
+  }
+
+  public handleRemove = (id: number) => {
+    const { information } = this.state;
+    this.setState({
+      information: information.filter(info => info.id !== id)
     })
   }
 }

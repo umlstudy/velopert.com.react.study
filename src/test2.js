@@ -12,3 +12,4 @@ console.log(arr3);
 // 필터
 const arr4= arr.filter(num => num !== 3); // [1, 2, 4, 5]
 console.log(arr4);
+
