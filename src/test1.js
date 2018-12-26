@@ -40,10 +40,10 @@ printLater2(100)
 function foo() {
     //var a = 'hello';
     if (true) {
-      var a = 'bye';
-      console.log('in if block ' + a); // bye
+      var ax = 'bye';
+      console.log('in if block ' + ax); // bye
     }
-    console.log('out if block ' + a); // bye
+    console.log('out if block ' + ax); // bye
 }
 // -- error
 //console.log('out function ' +  a); // bye
@@ -52,15 +52,15 @@ foo();
 
 
 // map 함수 알아보기
-const a = [1,2,3,4,5];
+const aa = [1,2,3,4,5];
 
 // map 함수 알아보기 1. foreach
-const b = [];
-a.forEach(num =>  b.push(num * 2));
+const bb = [];
+aa.forEach(num =>  bb.push(num * 2));
 
 // map 함수 알아보기 2. map
-const c = a.map(num => num * 2);
+const cc = aa.map(num => num * 2);
 
-console.log(a);
-console.log(b);
-console.log(c);
+console.log(aa);
+console.log(bb);
+console.log(cc);

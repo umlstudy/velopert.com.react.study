@@ -3,17 +3,17 @@ import React, { Component } from 'react';
 class PhoneInfo extends Component {
     static defaultProps = {
         info: {
+            id: 0,
             name: '이름',
-            phone: '010-0000-0000',
-            id: 0
+            phone: '010-0000-0000'
         }
     }
 
     render() {
         const style = {
             border: '1px solid black',
-            padding: '8px',
-            margin: '8px'
+            margin: '8px',
+            padding: '8px'
         };
 
         const {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import PhoneForm from './component/PhoneForm';
+import PhoneInfoList from './component/PhoneInfoList';
 
 // tslint:disable:no-console
 class App extends React.Component {
@@ -22,18 +23,12 @@ class App extends React.Component {
   private id: number = 2
 
   public render() {
-    const { information } = this.state;
     return (
       <div>
         <PhoneForm
           onCreate={this.handleCreate}
         />
-        {information.forEach((item)=>{
-          //
-          JSON.stringify(item)
-          ;
-        })}
-        {JSON.stringify(information)}
+        <PhoneInfoList data={this.state.information}/>
       </div>
     );
   }
