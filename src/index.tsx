@@ -2,7 +2,9 @@ import { List, Map } from 'immutable';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App';
+import immutableTestDummy from './immutable.test';
 import './index.css';
+import recordTestDummy from  './record.test';
 import registerServiceWorker from './registerServiceWorker';
 
 // tslint:disable:no-console
@@ -58,6 +60,9 @@ console.log(nextObj.toJS());
 nextArr = nextArr.delete(0);
 console.log(nextArr.toJS());
 
+
+immutableTestDummy();
+recordTestDummy();
 
 ReactDOM.render(
   <App />,

@@ -47,8 +47,19 @@ nextArr = arr.filter(item => item.get('foo') === 1);
 console.log(nextArr.toJS());
 
 // 9. delete 로 key 를 지울 수 있음
+console.log("---------------------");
 nextObj = nextObj.delete('foo');
+console.log("end---------------------");
 console.log(nextObj.toJS());
 
 nextArr = nextArr.delete(0);
 console.log(nextArr.toJS());
+console.log("end2---------------------");
+
+let immutableTestDummy = () => {
+  console.log('immutableTestDummy')
+};
+
+console.log("end3---------------------");
+
+export default immutableTestDummy;
