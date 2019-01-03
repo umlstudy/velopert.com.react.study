@@ -1,0 +1,18 @@
+a.subnav_link:link {
+    text-decoration: dodgerblue;
+    font-size:1.5em;
+}
+
+a.subnav_link:visited {
+    color: black;
+}
+
+a.subnav_link:hover {
+    cursor: pointer;
+    color: brown;
+    font-size:3em;
+}
+
+a.subnav_link:active {
+    color: green;
+}

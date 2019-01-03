@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cross-env": "^5.2.0",
     "immutable": "^4.0.0-rc.12",
+    "query-string": "^6.2.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1",
     "react-scripts-ts": "3.1.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
+    "start2": "cross-env NODE_PATH=src react-scripts start",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   },
