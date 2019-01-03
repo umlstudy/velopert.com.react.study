@@ -8,11 +8,10 @@ class UserList extends Component {
     return nextProps.users !== this.props.users;
   }
 
-
   renderUsers = () => {
     const { users } = this.props;
     return users.map((user) => (
-      <User key={user.id} user={user} />
+      <User key={user.get('id')} user={user} />
     ))
   }
 
