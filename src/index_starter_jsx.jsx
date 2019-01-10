@@ -6,7 +6,8 @@ import { Provider  } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import App from './middleware3/App';
 import modules from './middleware3/modules';
-import promiseMiddleware from 'redux-promise-middleware';
+// import promiseMiddleware from 'redux-promise-middleware';
+import penderMiddleware from 'redux-pender';
 
 // tslint:disable:no-console
 export default function main() {
@@ -14,10 +15,10 @@ export default function main() {
     https://github.com/evgenyrodionov/redux-logger#options
     */
     const logger = createLogger(); 
-    const customizedPromiseMiddleware = promiseMiddleware({
-        promiseTypeSuffixes: ['PENDING', 'SUCCESS', 'FAILURE']
-    });
-    const store = createStore(modules, applyMiddleware(logger, ReduxThunk, customizedPromiseMiddleware))
+    // const customizedPromiseMiddleware = promiseMiddleware({
+    //     promiseTypeSuffixes: ['PENDING', 'SUCCESS', 'FAILURE']
+    // });
+    const store = createStore(modules, applyMiddleware(logger, ReduxThunk, penderMiddleware()))
 
     const appElement = document.getElementById('root');
     ReactDOM.render(

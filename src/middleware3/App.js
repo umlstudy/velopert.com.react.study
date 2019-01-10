@@ -74,11 +74,16 @@ export default connect(
         console.log("connect-----state");
         console.log(state);
         console.log("connect-----state.end");
+        let key = 'GET_POST';
+        let loading = state.pender.pending[key];
+        let error = state.pender.failure[key];
+        // let loading = false;
+        // let error = null;
         return {
         num: state.counter.counter,
-        error: state.post.error,
         post: state.post.data,
-        loading: state.post.pending
+        loading: loading,
+        error: error
     };},
     (dispatch) => ({
         CounterActions: bindActionCreators(counterActions, dispatch),
