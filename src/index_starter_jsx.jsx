@@ -4,8 +4,8 @@ import { createStore, applyMiddleware  } from 'redux';
 import { createLogger } from 'redux-logger';
 import { Provider  } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
-import App from './middleware2/App';
-import modules from './middleware2/modules';
+import App from './middleware3/App';
+import modules from './middleware3/modules';
 
 // tslint:disable:no-console
 export default function main() {
