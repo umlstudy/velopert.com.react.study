@@ -5,6 +5,7 @@ import { Provider  } from 'react-redux';
 import App from './reducer/components/App';
 import counterApp from './reducer/reducers';
 import loggerMiddleware from './middleware/lib/loggerMiddleware';
+import { createLogger } from 'redux-logger';
 
 // tslint:disable:no-console
 export default function main() {
@@ -15,8 +16,13 @@ export default function main() {
     // 미들웨어가 여러개인경우에는 파라미터로 여러개를 전달해주면 됩니다. 예: applyMiddleware(a,b,c)
     // 미들웨어의 순서는 여기서 전달한 파라미터의 순서대로 지정됩니다.
     //const store = createStore(counterApp);
-    const store = createStore(counterApp, applyMiddleware(loggerMiddleware))
+    //const store = createStore(counterApp, applyMiddleware(loggerMiddleware))
 
+    /* 로그 미들웨어를 생성 할 때 설정을 커스터마이징 할 수 있습니다.
+    https://github.com/evgenyrodionov/redux-logger#options
+    */
+    const logger = createLogger(); 
+    const store = createStore(counterApp, applyMiddleware(logger))
 
     // 렌더링 될 때 Redux 컴포넌트인 <Provider> 에 store 를 설정해주면 
     // 그 하위 컴포넌트들에 따로 parent-child 구조로 전달해주지 않아도 
