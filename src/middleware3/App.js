@@ -10,7 +10,27 @@ class App extends Component {
     componentDidMount() {
         // 컴포넌트가 처음 마운트 될 때 현재 number 를 postId 로 사용하여 포스트 내용을 불러옵니다.
         const { num, PostActions } = this.props;
-        PostActions.getPost(num);
+        // PostActions.getPost(num);
+        this.getPost(num);
+    }
+
+    // async 와 await 이용
+    getPost = async (postId) => {
+        const { PostActions } = this.props;
+        try {
+            await PostActions.getPost(postId);
+            console.log('요청이 완료 된 다음에 실행됨')
+        } catch(e) {
+            console.log('에러가 발생!');
+        }
+        //or
+        // PostActions.getPost(postId).then(
+        //     () => {
+        //         console.log('요청이 완료 된 다음이 실행 됨');
+        //     }
+        // ).catch((e) => {
+        //     console.log('에러가 발생!');
+        // })
     }
 
     componentWillReceiveProps(nextProps) {
