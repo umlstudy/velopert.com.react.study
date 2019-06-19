@@ -46,7 +46,7 @@ function fasync3 (param) {
     });
 }
  
-var start = 1;
+start = 1;
 fasync1(start)
     .then(fasync2)
     .then(fasync3)
